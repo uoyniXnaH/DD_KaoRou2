@@ -1173,7 +1173,8 @@ class MainWindow(QMainWindow):  # Main window
                     if text:
                         start = ms2SRTTime(t - videostart + subStart)
                         end = ms2SRTTime(t - videostart + subStart + subData[t][0])
-                        exportFile.write('%s\n%s --> %s\n%s\n\n' % (subNumber, start, end, text))
+                        #exportFile.write('%s\n%s --> %s\n%s\n\n' % (subNumber, start, end, text))
+                        exportFile.write('%s --> %s\n%s\n\n' % (start, end, text + str(subNumber)))
                         subNumber += 1
             QMessageBox.information(self, '导出字幕', '导出完成', QMessageBox.Yes)
             self.exportWindow.hide()
