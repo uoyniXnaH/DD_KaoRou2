@@ -926,7 +926,7 @@ class VideoDecoder(QWidget):
                     delta, text = subDict[start]
                     end = ms2SRTTime(start + delta)
                     start = ms2SRTTime(start)
-                    srt.write('%s\n%s --> %s\n%s\n\n' % (cnt, start, end, text))
+                    srt.write('%s\n%s --> %s\n%s\n\n' % (cnt, start, end, text + str(cnt)))
                     cnt += 1
             srt.close()
         elif outputPath.endswith('.lrc'):  # lrc字幕
